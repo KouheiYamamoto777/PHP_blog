@@ -16,7 +16,7 @@ class FromValidate
         if (empty($post['content'])) {
             $err[] = '投稿内容は必須です';
         }
-        if (count($err) === 0) {
+        if (empty($err)) {
             $result = false;
             $dbh = db_connect();
             $sql = 'insert into blog(title, content, category, post_at, publish_status) values (?, ?, ?, now(), ?)';
@@ -25,7 +25,7 @@ class FromValidate
                 $stmt = $dbh->prepare($sql);
                 $stmt->execute(array(
                     $post['title'],
-                    $post['content'],
+                    nl2br($post['content']),
                     $post['category'],
                     $post['publish_status']
                 ));
