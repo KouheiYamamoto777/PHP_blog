@@ -10,15 +10,13 @@
 </head>
 <body>
     <h2>ブログフォーム</h2>
-    <form action="blog_create" method="post">
+    <form action="blog_create.php" method="post">
         <p>タイトル : </p>
         <input type="text" name="title">
         <p>カテゴリ : </p>
-        <select name="category">
-            <option value="1">ブログ</option>
-            <option value="2">日常</option>
-            <option value="3">プログラミング</option>
-        </select>
+        <input type="radio" name="category" value="1" checked>ブログ
+        <input type="radio" name="category" value="2">日常
+        <input type="radio" name="category" value="3">プログラミング
         <p>ブログ本文 : </p>
         <textarea name="content" id="" cols="30" rows="5"></textarea>
         <br />
