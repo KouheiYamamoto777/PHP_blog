@@ -17,7 +17,7 @@ $story = $blogContent->getBlogContent($_GET);
 <body>
     <h2>ブログ詳細</h2>
     <p>タイトル : <?= h($story['title']) ?></p>
-    <p><?= h($story['content']) ?></p>
+    <p><?= $story['content'] ?></p>
     <a href="./index.php">戻る</a>
 </body>
 </html>
