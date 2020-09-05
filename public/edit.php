@@ -4,9 +4,8 @@ spl_autoload_register(function($class) {
 });
 require_once '../functions.php';
 
-$blogContent = new Story();
+$blogContent = new EditView();
 $story = $blogContent->getBlogContent($_GET);
-
 ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -18,8 +17,17 @@ $story = $blogContent->getBlogContent($_GET);
 <body>
     <h2>ブログ編集</h2>
     <form action="" method="post">
-        <p>タイトル : <input type="text" name="edit_title" value="<?= h($story['title']) ?>"></p>
-        <p>ブログ内容 : <textarea name="edit_content" id="" cols="30" rows="10"><?= $story['content'] ?></textarea></p>
+        <p>タイトル : </p>
+        <input type="text" name="title" value="<?= h($story['title']) ?>">
+        <p>カテゴリ : </p>
+        <input type="radio" name="category" value="1" <?php if($story['category'] === '1') { echo 'checked';} ?>>ブログ
+        <input type="radio" name="category" value="2" <?php if($story['category'] === '2') { echo 'checked';} ?>>日常
+        <input type="radio" name="category" value="3" <?php if($story['category'] === '3') { echo 'checked';} ?>>プログラミング
+        <p>ブログ本文 : </p>
+        <textarea name="content" id="" cols="30" rows="10"><?= $story['content'] ?></textarea>
+        <p>公開ステータス : </p>
+        <input type="radio" name="publish_status" value="1" <?php if($story['publish_status'] === '1') { echo 'checked';} ?>>公開
+        <input type="radio" name="publish_status" value="2" <?php if($story['publish_status'] === '2') { echo 'checked';} ?>>非公開
         <p><input type="submit" value="変更する"></p>
     </form>
     <a href="./index.php">戻る</a>

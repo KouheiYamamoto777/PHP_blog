@@ -4,7 +4,7 @@ spl_autoload_register(function($class) {
 });
 require_once '../functions.php';
 
-$blogContent = new Story();
+$blogContent = new PublicView();
 $story = $blogContent->getBlogContent($_GET);
 
 ?>
