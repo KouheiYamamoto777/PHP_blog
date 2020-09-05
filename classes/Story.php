@@ -8,7 +8,7 @@ class Story
     {
         $result = false;
         $dbh = db_connect();
-        $sql = 'select title, content from blog where id = ?';
+        $sql = 'select title, content, post_at from blog where id = ?';
 
         try {
             $stmt = $dbh->prepare($sql);
