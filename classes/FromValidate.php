@@ -16,6 +16,12 @@ class FromValidate
         if (empty($post['content'])) {
             $err[] = '投稿内容は必須です';
         }
+        if ((int)$post['category'] > 3) {
+            $err[] = 'カテゴリーの値が不正です';
+        }
+        if ((int)$post['publish_status'] > 2) {
+            $err[] = 'ステータスの値が不正です';
+        }
         if (empty($err)) {
             $result = false;
             $dbh = db_connect();
