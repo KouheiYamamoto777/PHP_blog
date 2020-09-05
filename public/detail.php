@@ -16,7 +16,7 @@ $story = $blogContent->getBlogContent($_GET);
 </head>
 <body>
     <h2>ブログ詳細</h2>
-    <p>タイトル : <?= h($story['title']) ?></p>
+    <p>タイトル : <?= h($story['title']) ?> (<?= h($story['post_at']) ?>)</p>
     <p><?= $story['content'] ?></p>
     <a href="./index.php">戻る</a>
 </body>

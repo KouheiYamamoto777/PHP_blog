@@ -8,6 +8,7 @@ require_once '../functions.php';
 
 $validateData = new FromValidate();
 if ($validateData->postValidate($_POST)) {
+    InsertBlog::postInsertDb($_POST);
     $msg = '投稿が完了しました';
 }
 
