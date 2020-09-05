@@ -13,12 +13,15 @@ $story = $blogContent->getBlogContent($_GET);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ブログ詳細</title>
+    <title>ブログ編集画面</title>
 </head>
 <body>
-    <h2>ブログ詳細</h2>
-    <p>タイトル : <?= h($story['title']) ?> (<?= h($story['post_at']) ?>)</p>
-    <p><?= $story['content'] ?></p>
+    <h2>ブログ編集</h2>
+    <form action="" method="post">
+        <p>タイトル : <input type="text" name="edit_title" value="<?= h($story['title']) ?>"></p>
+        <p>ブログ内容 : <textarea name="edit_content" id="" cols="30" rows="10"><?= $story['content'] ?></textarea></p>
+        <p><input type="submit" value="変更する"></p>
+    </form>
     <a href="./index.php">戻る</a>
 </body>
 </html>
