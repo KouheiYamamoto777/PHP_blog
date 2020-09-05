@@ -1,5 +1,6 @@
 <?php
 
+require_once 'InsertBlog.php';
 require_once '../db_connect.php';
 
 class FromValidate
@@ -8,6 +9,7 @@ class FromValidate
 
     public function postValidate($post)
     {
+        $result = false;
         if (empty($post['title'])) {
             $err[] = 'タイトルを入力してください';
         } elseif (mb_strlen($post['title']) > 191) {
@@ -23,25 +25,11 @@ class FromValidate
             $err[] = 'ステータスの値が不正です';
         }
         if (empty($err)) {
-            $result = false;
-            $dbh = db_connect();
-            $sql = 'insert into blog(title, content, category, post_at, publish_status) values (?, ?, ?, now(), ?)';
-
-            try {
-                $stmt = $dbh->prepare($sql);
-                $stmt->execute(array(
-                    $post['title'],
-                    nl2br($post['content']),
-                    $post['category'],
-                    $post['publish_status']
-                ));
-                unset($_SESSION['err']);
-                return $result = true;
-            } catch (PDOException $e) {
-                return $result;
-            }
+            return $result = true;
         } elseif (count($err) !== 0) {
             $_SESSION['err'] = $err;
+            return $result;
         }
+        
     }
 }
