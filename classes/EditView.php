@@ -11,7 +11,7 @@ class EditView implements IGetContent
     {
         $result = false;
         $dbh = db_connect();
-        $sql = 'select title, content, category, publish_status from blog where id = ?';
+        $sql = 'select id, title, content, category, publish_status from blog where id = ?';
 
         try {
             $stmt = $dbh->prepare($sql);
