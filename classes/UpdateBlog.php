@@ -4,6 +4,11 @@ require_once '../db_connect.php';
 
 class UpdateBlog
 {
+    /**
+     * ブログ編集処理
+     * @param array $post
+     * @return bool $result
+     */
     public static function postUpdateDb($post)
     {
         $result = false;

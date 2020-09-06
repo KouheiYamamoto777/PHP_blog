@@ -3,6 +3,11 @@ require_once '../db_connect.php';
 
 class SelectAll
 {
+    /**
+     * データベースから全てのカラムを取得する処理
+     * @param void
+     * preturn array|bool $result|false
+     */
     public function getAllBlog()
     {
         $result = false;

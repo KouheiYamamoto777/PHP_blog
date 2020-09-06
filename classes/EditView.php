@@ -8,7 +8,7 @@ require_once '../db_connect.php';
 class EditView implements IGetContent
 {
     /**
-     * 編集する際に必要なテーブルデータを取得する
+     * 編集する際に必要なカラムを取得する処理
      * @param array $data
      * @return array|bool $result|false
      */

@@ -7,6 +7,11 @@ class FromValidate
 {
     private $err = [];
 
+    /**
+     * 入力内容バリデーション
+     * @param array $post
+     * @return bool $result
+     */
     public function postValidate($post)
     {
         $result = false;
