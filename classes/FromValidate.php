@@ -5,7 +5,7 @@ require_once '../db_connect.php';
 
 class FromValidate
 {
-    public $err = [];
+    private $err = [];
 
     public function postValidate($post)
     {

@@ -4,8 +4,9 @@ spl_autoload_register(function($class) {
 });
 require_once '../functions.php';
 
-$blogContent = new Story();
+$blogContent = new PublicView();
 $story = $blogContent->getBlogContent($_GET);
+
 ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -16,7 +17,7 @@ $story = $blogContent->getBlogContent($_GET);
 </head>
 <body>
     <h2>ブログ詳細</h2>
-    <p>タイトル : <?= h($story['title']) ?></p>
+    <p>タイトル : <?= h($story['title']) ?> (<?= h($story['post_at']) ?>)</p>
     <p><?= $story['content'] ?></p>
     <a href="./index.php">戻る</a>
 </body>

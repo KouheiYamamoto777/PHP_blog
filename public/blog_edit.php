@@ -8,9 +8,10 @@ require_once '../functions.php';
 
 $validateData = new FromValidate();
 if ($validateData->postValidate($_POST)) {
-    InsertBlog::postInsertDb($_POST);
-    $msg = '投稿が完了しました';
+    UpdateBlog::postUpdateDb($_POST);
+    $msg = '編集が完了しました';
 }
+
 
 ?>
 <!DOCTYPE html>
@@ -18,7 +19,7 @@ if ($validateData->postValidate($_POST)) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>新規投稿チェック画面</title>
+    <title>ブログ編集チェック画面</title>
 </head>
 <body>
 
@@ -44,7 +45,6 @@ if ($validateData->postValidate($_POST)) {
         ?>
     </p>
     
-    <p><a href="./register.php">ブログ登録画面へ戻る</a></p>
     <p><a href="./index.php">ブログ一覧画面へ戻る</a></p>
 </body>
 </html>

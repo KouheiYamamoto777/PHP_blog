@@ -1,8 +1,11 @@
 <?php
 
+spl_autoload_register(function($class) {
+    require_once $class . '.php';
+});
 require_once '../db_connect.php';
 
-class Story
+class PublicView implements IGetContent
 {
     public function getBlogContent($data)
     {

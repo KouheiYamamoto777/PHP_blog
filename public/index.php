@@ -17,18 +17,21 @@ $blogs = new SelectAll();
 <h2>ブログ一覧</h2>
     <table>
         <tr>
-            <th>No</th>
             <th>タイトル</th>
             <th>カテゴリ</th>
+            <th>詳細をみる</th>
+            <th>編集する</th>
+            <th>削除する</th>
         </tr>
         <?php
             foreach($blogs->getAllBlog() as $blog):
         ?>
         <tr>
-            <td><?= h($blog['id']) ?></td>
             <td><?= h($blog['title']) ?></td>
             <td><?= setCategoryName(h($blog['category'])) ?></td>
             <td><a href="detail.php?id=<?= h($blog['id']) ?>">詳細</a></td>
+            <td><a href="edit.php?id=<?= h($blog['id']) ?>">編集</a></td>
+            <td><a href="delete.php?id=<?= h($blog['id']) ?>">削除</a></td>
         </tr>
         <?php
             endforeach;
