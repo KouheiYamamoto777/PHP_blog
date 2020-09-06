@@ -45,7 +45,6 @@ if ($validateData->postValidate($_POST)) {
         ?>
     </p>
     
-    <p><a href="./register.php">ブログ登録画面へ戻る</a></p>
     <p><a href="./index.php">ブログ一覧画面へ戻る</a></p>
 </body>
 </html>
