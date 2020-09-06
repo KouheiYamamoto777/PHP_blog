@@ -7,6 +7,11 @@ require_once '../db_connect.php';
 
 class PublicView implements IGetContent
 {
+    /**
+     * ブログ一覧を表示する際に必要になるカラムを取得する処理
+     * @param array $data
+     * @return array|bool $resulr|false
+     */
     public function getBlogContent($data)
     {
         $result = false;

@@ -4,6 +4,11 @@ require_once '../db_connect.php';
 
 class DeleteBlog
 {
+    /**
+     * ブログを削除する処理
+     * @param array $data
+     * @return bool $result
+     */
     public static function deleteThisBlog($data)
     {
         $result = false;

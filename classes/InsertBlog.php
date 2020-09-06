@@ -2,6 +2,11 @@
 
 class InsertBlog
 {
+    /**
+     * ブログ新規作成処理
+     * @param array $post
+     * @return bool $result
+     */
     public static function postInsertDb($post)
     {
         $result = false;
