@@ -17,7 +17,6 @@ $blogs = new SelectAll();
 <h2>ブログ一覧</h2>
     <table>
         <tr>
-            <th>No</th>
             <th>タイトル</th>
             <th>カテゴリ</th>
             <th>詳細をみる</th>
@@ -27,7 +26,6 @@ $blogs = new SelectAll();
             foreach($blogs->getAllBlog() as $blog):
         ?>
         <tr>
-            <td><?= h($blog['id']) ?></td>
             <td><?= h($blog['title']) ?></td>
             <td><?= setCategoryName(h($blog['category'])) ?></td>
             <td><a href="detail.php?id=<?= h($blog['id']) ?>">詳細</a></td>
