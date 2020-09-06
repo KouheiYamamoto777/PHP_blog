@@ -12,6 +12,7 @@ if ($validateData->postValidate($_POST)) {
     $msg = '編集が完了しました';
 }
 
+
 ?>
 <!DOCTYPE html>
 <html lang="ja">

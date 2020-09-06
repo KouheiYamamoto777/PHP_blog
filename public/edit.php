@@ -16,7 +16,7 @@ $story = $blogContent->getBlogContent($_GET);
 </head>
 <body>
     <h2>ブログ編集</h2>
-    <form action="" method="post">
+    <form action="blog_edit.php" method="post">
         <p>タイトル : </p>
         <input type="text" name="title" value="<?= h($story['title']) ?>">
         <p>カテゴリ : </p>
@@ -28,6 +28,7 @@ $story = $blogContent->getBlogContent($_GET);
         <p>公開ステータス : </p>
         <input type="radio" name="publish_status" value="1" <?php if($story['publish_status'] === '1') { echo 'checked';} ?>>公開
         <input type="radio" name="publish_status" value="2" <?php if($story['publish_status'] === '2') { echo 'checked';} ?>>非公開
+        <input type="hidden" name="id" value="<?= h($story['id']) ?>">
         <p><input type="submit" value="変更する"></p>
     </form>
     <a href="./index.php">戻る</a>
