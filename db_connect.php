@@ -12,7 +12,8 @@ function db_connect()
 
     try {
         $dbh = new PDO($dsn, $user, $password, [
-            PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
+            PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+            PDO::ATTR_EMULATE_PREPARES => false
         ]);
         return $dbh;
     } catch (PDOException $e) {
